@@ -18,7 +18,7 @@ resource makeLineService 'Microsoft.Web/containerApps@2021-03-01' = {
       containers: [
         {
           name: 'make-line-service'
-          image: 'ghcr.io/azure/reddog-retail-demo/reddog-retail-make-line-service:latest'
+          image: 'docker.io/ahmelsayed/reddog-make-line-service:latest'
         }
       ]
       scale: {
@@ -57,7 +57,7 @@ resource makeLineService 'Microsoft.Web/containerApps@2021-03-01' = {
         appPort: 80
         components: [
           {
-            name: 'reddog.pubsub'
+            name: 'reddog.pubsub.makeline'
             type: 'pubsub.azure.servicebus'
             version: 'v1'
             metadata: [

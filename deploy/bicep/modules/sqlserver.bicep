@@ -6,7 +6,7 @@ param sqlAdminLoginPassword string
 
 resource sqlserver 'Microsoft.Sql/servers@2021-05-01-preview' = {
   name: sqlServerName
-  location: location
+  location: 'eastus'
   properties: {
     administratorLogin: sqlAdminLogin
     administratorLoginPassword: sqlAdminLoginPassword
@@ -25,7 +25,7 @@ resource sqlfirewall 'Microsoft.Sql/servers/firewallRules@2021-05-01-preview' = 
 resource database 'Microsoft.Sql/servers/databases@2021-05-01-preview' = {
   name: sqlDatabaseName
   parent: sqlserver
-  location: location
+  location: 'eastus'
   sku: {
     name: 'GP_S_Gen5'
     tier: 'GeneralPurpose'
