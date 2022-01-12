@@ -17,7 +17,7 @@ resource receiptGenerationService 'Microsoft.Web/containerApps@2021-03-01' = {
       containers: [
         {
           name: 'receipt-generation-service'
-          image: 'ghcr.io/azure/reddog-retail-demo/reddog-retail-receipt-generation-service:latest'
+          image: 'docker.io/ahmelsayed/reddog-receipt-service:latest'
         }
       ]
       scale: {
@@ -48,7 +48,7 @@ resource receiptGenerationService 'Microsoft.Web/containerApps@2021-03-01' = {
         appPort: 80
         components: [
           {
-            name: 'reddog.pubsub'
+            name: 'reddog.pubsub.receipt'
             type: 'pubsub.azure.servicebus'
             version: 'v1'
             metadata: [

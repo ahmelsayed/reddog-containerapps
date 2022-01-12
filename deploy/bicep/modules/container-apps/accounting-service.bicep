@@ -16,7 +16,7 @@ resource accountingService 'Microsoft.Web/containerApps@2021-03-01' = {
       containers: [
         {
           name: 'accounting-service'
-          image: 'ghcr.io/azure/reddog-retail-demo/reddog-retail-accounting-service:latest'
+          image: 'docker.io/ahmelsayed/reddog-accounting:latest'
           env: [
             {
               name: 'reddog-sql'
@@ -61,7 +61,7 @@ resource accountingService 'Microsoft.Web/containerApps@2021-03-01' = {
         appPort: 80
         components: [
           {
-            name: 'reddog.pubsub'
+            name: 'reddog.pubsub.accounting'
             type: 'pubsub.azure.servicebus'
             version: 'v1'
             metadata: [

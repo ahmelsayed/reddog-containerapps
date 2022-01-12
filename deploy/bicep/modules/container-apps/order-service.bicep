@@ -15,7 +15,7 @@ resource orderService 'Microsoft.Web/containerApps@2021-03-01' = {
       containers: [
         {
           name: 'order-service'
-          image: 'ghcr.io/azure/reddog-retail-demo/reddog-retail-order-service:latest'
+          image: 'docker.io/ahmelsayed/reddog-order-service:latest'
         }
       ]
       scale: {
@@ -27,7 +27,7 @@ resource orderService 'Microsoft.Web/containerApps@2021-03-01' = {
         appPort: 80
         components: [
           {
-            name: 'reddog.pubsub'
+            name: 'reddog.pubsub.order'
             type: 'pubsub.azure.servicebus'
             version: 'v1'
             metadata: [
